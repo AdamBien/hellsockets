@@ -19,8 +19,12 @@ public class MessagesEndpoint extends Endpoint {
     @Override
     public void onOpen(Session session, EndpointConfig ec) {
         this.session = session;
-        this.session.addMessageHandler((MessageHandler.Whole<String>) (msg) -> {
-            message = msg;
+        //lambda cannot be used for MessageHandlers
+        this.session.addMessageHandler(new MessageHandler.Whole<String>() {
+            @Override
+            public void onMessage(String msg) {
+                message = msg;
+            }
         });
     }
 
