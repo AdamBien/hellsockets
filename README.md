@@ -6,6 +6,8 @@ WebSockets Stress Tester
 
 Drop the war into a Java EE 7 compliant server on Java 8
 
+hellsockets is the stress generator, don't deploy it together with the actual application--it will blur the results.
+
 #Usage
 
 1. `curl http://localhost:8080/hellsockets/resources/statistics`for statistics
