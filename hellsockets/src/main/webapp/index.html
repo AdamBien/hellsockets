@@ -10,26 +10,38 @@
 </head>
 <body ng-app="hellsockets">
     <div class="container">
-        <div ng-controller="LoaderController">
+        <div ng-controller="LoaderController" class="form-horizontal">
             <form ng-submit="start()">
-                <p>
-                    <input type="text" placeholder="uri" ng-model="config.uri"/>
-                </p>
-                <p>
-                    <input type="text" placeholder="message" ng-model="config.message"/>
-                </p>
-                <p>
-                    <input type="number" ng-model="config.sessions"/>
-                </p>
-                <p>
-                    <input type="number" ng-model="config.iterations"/>
-                </p>
-
-                <p>
-                    <input type="submit" value="Start"/>
-                </p>
+                <div class="form-group">
+                    <label for="uriInput" class="col-xs-2 control-label">Uri</label>
+                    <div class="col-xs-10">
+                        <input type="url" placeholder="Uri" id="uriInput" ng-model="config.uri"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="messageInput" class="col-xs-2 control-label">Message</label>
+                    <div class="col-xs-10">
+                        <input type="text" placeholder="Message" id="messageInput" ng-model="config.message"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sessionsInput" class="col-xs-2 control-label">Sessions</label>
+                    <div class="col-xs-10">
+                        <input type="number" id="sessionsInput" ng-model="config.sessions"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="iterationsInput" class="col-xs-2 control-label">Iterations</label>
+                    <div class="col-xs-10">
+                        <input type="number" id="iterationsInput" ng-model="config.iterations"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" class="btn btn-success" value="Start"/> {{result.status}}
+                    </div>
+                </div>
             </form>
-            {{result.status}}
         </div>
     </div>
 
