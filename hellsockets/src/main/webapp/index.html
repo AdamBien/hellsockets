@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hellsockets - WebSockets Stress Tester</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+</head>
+<body ng-app="hellsockets">
+    <div class="container">
+        <div ng-controller="LoaderController" class="form-horizontal">
+            <form ng-submit="start()">
+                <div class="form-group">
+                    <label for="uriInput" class="col-xs-2 control-label">Uri</label>
+                    <div class="col-xs-10">
+                        <input type="text" placeholder="Uri" id="uriInput" ng-model="config.uri"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="messageInput" class="col-xs-2 control-label">Message</label>
+                    <div class="col-xs-10">
+                        <input type="text" placeholder="Message" id="messageInput" ng-model="config.message"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sessionsInput" class="col-xs-2 control-label">Sessions</label>
+                    <div class="col-xs-10">
+                        <input type="number" id="sessionsInput" ng-model="config.sessions"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="iterationsInput" class="col-xs-2 control-label">Iterations</label>
+                    <div class="col-xs-10">
+                        <input type="number" id="iterationsInput" ng-model="config.iterations"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" class="btn btn-success" value="Start"/> {{result.status}}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.4/angular.js"></script>
+    <script src="res/js/app.js"></script>
+    <script src="res/js/services.js"></script>
+    <script src="res/js/controllers.js"></script>
+
+</body>
+</html>
