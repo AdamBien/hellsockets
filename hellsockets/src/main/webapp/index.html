@@ -9,26 +9,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 </head>
 <body ng-app="hellsockets">
-    <div ng-controller="LoaderController">
-        <form ng-submit="start()">
-            <p>
-                <input type="text" placeholder="uri" ng-model="config.uri"/>
-            </p>
-            <p>
-                <input type="text" placeholder="message" ng-model="config.message"/>
-            </p>
-            <p>
-                <input type="number" ng-model="config.sessions"/>
-            </p>
-            <p>
-                <input type="number" ng-model="config.iterations"/>
-            </p>
-            
-            <p>
-                <input type="submit" value="Start"/>
-            </p>
-        </form>
-        {{result.status}}
+    <div class="container">
+        <div ng-controller="LoaderController">
+            <form ng-submit="start()">
+                <p>
+                    <input type="text" placeholder="uri" ng-model="config.uri"/>
+                </p>
+                <p>
+                    <input type="text" placeholder="message" ng-model="config.message"/>
+                </p>
+                <p>
+                    <input type="number" ng-model="config.sessions"/>
+                </p>
+                <p>
+                    <input type="number" ng-model="config.iterations"/>
+                </p>
+
+                <p>
+                    <input type="submit" value="Start"/>
+                </p>
+            </form>
+            {{result.status}}
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
