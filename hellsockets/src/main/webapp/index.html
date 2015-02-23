@@ -4,7 +4,33 @@
     <meta charset="UTF-8">
     <title>Hellsockets - WebSockets Stress Tester</title>
 </head>
-<body ng-app>
+<body ng-app="hellsockets">
+    <div ng-controller="LoaderController">
+        <form ng-submit="start()">
+            <p>
+                <input type="text" placeholder="uri" ng-model="config.uri"/>
+            </p>
+            <p>
+                <input type="text" placeholder="message" ng-model="config.message"/>
+            </p>
+            <p>
+                <input type="number" ng-model="config.sessions"/>
+            </p>
+            <p>
+                <input type="number" ng-model="config.iterations"/>
+            </p>
+            
+            <p>
+                <input type="submit" value="Start"/>
+            </p>
+        </form>
+        {{result.status}}
+    </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.4/angular.js"></script>
+    <script src="res/js/app.js"></script>
+    <script src="res/js/services.js"></script>
+    <script src="res/js/controllers.js"></script>
+
 </body>
 </html>
