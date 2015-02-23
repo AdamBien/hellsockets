@@ -9,6 +9,8 @@ angular.module('hellsockets')
                 }else{
                     return {status: 'Not started'}
                 }
+            }, function(){
+                return {status: 'Failed'}
             });
         }
     };
